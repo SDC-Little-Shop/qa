@@ -1,11 +1,12 @@
+require('dotenv').config()
 const postgres = require('postgres');
 
 const sql = postgres({
-  host: 'localhost',
-  port: '5432',
-  database: 'qa',
-  username: '',
-  password: ''
+  host: process.env.PGHOST,
+  port: process.env.PGPORT,
+  database: process.env.PGDATABASE,
+  username: process.env.PGUSER,
+  password: process.env.PGPASSWORD
 });
 
 module.exports.sql = sql;
