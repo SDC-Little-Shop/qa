@@ -10,13 +10,10 @@ export const options = {
 };
 
 export default function () {
-  const BASE_URL = 'http://localhost:3001/qa'; // make sure this is not production
+  const BASE_URL = 'http://localhost:3001/qa';
 
   const responses = http.batch([
     ['GET', `${BASE_URL}/questions?product_id=${Math.floor(Math.random() * (1000011 - 900010) + 900010)}`],
-    //['GET', `${BASE_URL}/public/crocodiles/2/`, null, { tags: { name: 'PublicCrocs' } }],
-    //['GET', `${BASE_URL}/public/crocodiles/3/`, null, { tags: { name: 'PublicCrocs' } }],
-    //['GET', `${BASE_URL}/public/crocodiles/4/`, null, { tags: { name: 'PublicCrocs' } }],
   ]);
 
   sleep(1);
